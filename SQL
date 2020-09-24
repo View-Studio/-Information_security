@@ -1,0 +1,230 @@
+SQL은 데이터베이스에서 데이터를 저장, 조작 및 검색하기위한 표준 언어입니다.
+
+SQL 자습서는 MySQL, SQL Server, MS Access, Oracle, Sybase, Informix, Postgres 및 기타 데이터베이스 시스템에서 SQL을 사용하는 방법을 알려줍니다.
+
+[CODE]
+SELECT * FROM Customers;
+[/CODE]
+
+1 . SQL이란 무엇입니까?
+
+SQL은 Structured Query Language를 나타냅니다.
+SQL을 사용하면 데이터베이스에 액세스하고 조작 할 수 있습니다.
+SQL은 1986 년 ANSI (American National Standards Institute)의 표준이되었고 1987 년에는 ISO (International Organization for Standardization)의 표준이되었습니다.
+
+2 . SQL은 무엇을 할 수 있습니까?
+
+SQL은 데이터베이스에 대해 쿼리를 실행할 수 있습니다.
+SQL은 데이터베이스에서 데이터를 검색 할 수 있습니다.
+SQL은 데이터베이스에 레코드를 삽입 할 수 있습니다.
+SQL은 데이터베이스의 레코드를 업데이트 할 수 있습니다.
+SQL은 데이터베이스에서 레코드를 삭제할 수 있습니다.
+SQL은 새 데이터베이스를 만들 수 있습니다.
+SQL은 데이터베이스에 새 테이블을 만들 수 있습니다.
+SQL은 데이터베이스에 저장 프로 시저를 만들 수 있습니다.
+SQL은 데이터베이스에서 뷰를 생성 할 수 있습니다.
+SQL은 테이블, 프로 시저 및 뷰에 대한 권한을 설정할 수 있습니다.
+
+# CRUD #
+
+Create
+Read
+Update
+Delete
+
+4 . 웹 사이트에서 SQL 사용
+
+--데이터베이스의 데이터를 표시하는 웹 사이트를 구축하려면 다음이 필요합니다--
+
+RDBMS 데이터베이스 프로그램 (예 : MS Access, SQL Server, MySQL)
+PHP 또는 ASP와 같은 서버 측 스크립팅 언어를 사용하려면
+SQL을 사용하여 원하는 데이터를 얻으려면
+HTML / CSS를 사용하여 페이지 스타일을 지정하려면
+
+# RDBMS #
+
+RDBMS는 관계형 데이터베이스 관리 시스템을 나타냅니다.
+
+--데이터베이스는 DB와 이를 관리하는 시스템인 DBMS로 구분합니다.--
+
+RDBMS는 SQL 및 MS SQL Server, IBM DB2, Oracle, MySQL 및 Microsoft Access와 같은 모든 최신 데이터베이스 시스템의 기반입니다.
+RDBMS의 데이터는 테이블이라는 데이터베이스 개체에 저장됩니다. 테이블은 관련 데이터 항목의 모음이며 열과 행으로 구성됩니다.
+
+# SQL 명령어의 분류 #
+
+데이터 조작어(DML)
+  -SELECT
+  -INSERT
+  -UPDATE
+  -DELETE
+  
+데이터 정의어(DDL)
+  -CREATE
+  -ALTER
+  -DROP
+  -RENAME
+  -TRUNCATE
+  
+데이터 제어어(DCL)
+  -GRANT
+  -REVOKE
+  
+트랜젝션 제어어(TCL)
+  -COMMIT
+  -ROLLBACK
+  -SAVEPOINT
+  
+SELECT- 데이터베이스에서 데이터 추출
+UPDATE- 데이터베이스의 데이터를 업데이트합니다.
+DELETE- 데이터베이스에서 데이터를 삭제합니다.
+INSERT INTO- 데이터베이스에 새 데이터를 삽입합니다.
+CREATE DATABASE- 새 데이터베이스 생성
+ALTER DATABASE- 데이터베이스 수정
+CREATE TABLE- 새 테이블 생성
+ALTER TABLE- 테이블 수정
+DROP TABLE-테이블 삭제
+CREATE INDEX- 인덱스 생성 (검색 키)
+DROP INDEX- 인덱스 삭제
+
+관계형 데이터베이스의 구성 요소
+
+TABLE(행,열), VIEW(데이터를 선택하여 만든 가상의 부분 집합), INDEX(주소를 사용한 검색), SEQUENCE(시퀸스, 고유번호 자동생성), SYNONYM(시노임 객제의 별칭) 등의 개테로 구성
+ENTITY, RELATIONE등의 집합
+
+
+5 . DATA 분석 과정
+
+문제 인식 -> 데이터 수집과 가공 -> 데이터 분석 -> 분석 결과 실행
+여기서 2번째 단계를 전처리 라고 하는데, 전처리 과정에 70% ~ 80% 를 차지 하고 있음
+데이터 수집과 가공, 데이터 분석 과정에 SQL을 쓸 수 있습니다.
+
+6 . 정형 데이터와 비정형 데이터
+
+정형데이터는 틀이 잡혀있는 데이터, 업무용 데이터 베이스와 같은 곳 에서 가지고 오는 데이터.
+비정형 데이터는 틀이 잡혀있지 않은 데이터, 텍스트, 이미지, 음원 데이터, 빅데이터 등.
+여기서 SQL은 정형 데이터로 만들어진 관계형 데이터 베이스를 조작 할 수 있는 언어.
+
+------------------------------------------------------------------------------------------
+
+[CODE]
+SELECT CustomerName,City FROM Customers;
+[/CODE]
+
+[CODE]
+SELECT [CustomerName],[City] FROM Customers;
+[/CODE]
+ 
+# 중복 값 제거 #
+
+[CODE]
+SELECT DISTINCT Country FROM Customers;
+[/CODE]
+
+# ORDER BY--출력 결과 정렬 #
+
+오름차순 : ASC(기본값)
+내림차순 : DESC
+
+[CODE]
+SELECT * FROM Customers ORDER BY CustomerID DESC;
+[/CODE]
+
+# AS(별칭) #
+[CODE]
+SELECT CustomerID AS 사원번호 FROM Customers;
+[/CODE]
+
+[CODE]
+SELECT CustomerID AS 사원번호, Country AS 나라 FROM Customers;
+[/CODE]
+
+# 사칙연산 #
+더하기, 빼기, 나누기, 곱하기 가능
+
+[CODE]
+SELECT (CustomerID/3)+5 FROM Customers;
+[/CODE]
+
+# 연결 연산자 #
+
+[CODE]
+SELECT CustomerID AS 사원번호, City || Address  AS 주소 FROM Customers;
+[/CODE]
+
+[CODE]
+SELECT CustomerID AS 사원번호, City || Address || '분류-' || '(외국)' AS 주소 FROM Customers;
+[/CODE]
+
+# WHERE #
+조건을 부여
+
+연산자의 종류 : 비교연산자(=, <, >, !=, >=, <=)
+
+[CODE]
+SELECT CustomerID, CustomerName FROM Customers WHERE CustomerID=30;
+[/CODE]
+
+# SQL 연산자 #
+
+* BETWEEN A AND B -> A와 B를 포함한 사이의 값
+
+[CODE]
+SELECT CustomerID, CustomerName
+FROM Customers
+WHERE CustomerID BETWEEN 30 AND 50;
+[/CODE]
+
+* IN A -> A안에 어느 값이 일치하는지 확인
+
+[CODE]
+SELECT CustomerID, CustomerName
+FROM Customers
+WHERE CustomerID IN (10, 20, 30);
+[/CODE]
+
+* LIKE'비교문자' -> 비교 문자와 형태가 일치(%_사용)
+
+[CODE]
+SELECT CustomerID, CustomerName
+FROM Customers
+WHERE CustomerName LIKE 'A%';
+[/CODE]
+
+[CODE]
+SELECT CustomerID, CustomerName
+FROM Customers
+WHERE CustomerID LIKE '1%';
+[/CODE]
+
+
+* IN NULL -> NULL 값을 갖는 값(0은 값이 있는 것 입니다)
+
+
+[CODE]
+SELECT CustomerID, CustomerName
+FROM Customers
+WHERE CustomerID IS NULL;
+[/CODE]
+
+# 논리연산 #
+
+!= (같지않다)
+
+[CODE]
+SELECT *
+FROM Customers
+WHERE CustomerID LIKE '1%'
+(City != 'London' AND City != 'Berlin');
+[/CODE]
+
+
+
+
+
+
+
+
+
+
+
+
